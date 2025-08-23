@@ -1,0 +1,136 @@
+/* IMPORTS. */
+/* IMPORTS - FONTS. */
+/* Google Fonts:
+- 'Krona One': 'https://fonts.google.com/specimen/Krona+One'.
+- 'Montserrat': 'https://fonts.google.com/specimen/Montserrat'.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Variables declaration. */
+
+/* Declare variables:
+- NOTE: variable's name MUST BEGIN with 2 dashes (--), and it's CASE SENSITIVE.
+- Within ':root' selector: GLOBAL SCOPE.
+- For LOCAL scope, declare variable WITHIN specific selector, not in ':root'.
+- Ref.: 'https://www.w3schools.com/css/css3_variables.asp'.
+ */
+:root {
+    --color-primario: #000000;
+    --color-secundario: #F6F6F6;
+    --color-terciario: #22D4FD;
+    --color-hover: #272727;
+    --fuente-montserrat: "Montserrat", sans-serif;
+    --fuente-krona: "Krona One", sans-serif;
+}
+
+/* Universal changes, for all tags / elements / classes. */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Default HTML tags. */
+body {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    /* height: 100vh; */                         /* Change height display to 100% of VISIBLE screen. */
+    box-sizing: border-box;                 /* Set proper 'box-sizing'. */
+}
+
+/* Custom classes. */
+
+.header {
+    /* Padding: [top], [right], [bottom], [left]. Ref.: 'https://www.w3schools.com/css/css_padding.asp' */
+    padding: 2% 0% 0% 15%;                  /* 2%: trial and error; 0%: no additional to right, nor bottom; 15%: same as left margin in class '.presentacion', to be aligned. */
+}
+
+.header-menu {
+    display: flex;
+    gap: 80px;                              /* According to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
+}
+
+.header-menu-link {
+    /* Following specifications according to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
+    color: var(--color-terciario);
+    font-family: var(--fuente-montserrat);
+    font-weight: 600;                       /* Semibold. */
+    font-size: 24px;
+    text-decoration: none;
+}
+
+/* 'presentacion' as flex box: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/'. */
+.presentacion {
+    display: flex;                          /* or inline-flex: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-display'.*/
+    align-items: center;                    /* 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-align-items'. */
+    /* padding: 7% 15%; */
+    padding: 6% 15%;
+    justify-content: space-between;         /* 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-justify-content' */
+}
+
+.presentacion-contenido {
+    width: 615px;                           /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
+    display: flex;
+    flex-direction: column;                 /* Set flow direction as columns: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flex-direction'. */
+    gap: 40px;                              /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso', and as a flexbox property: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-gap-row-gap-column-gap'. */
+}
+
+.presentacion-contenido-titulo {
+    font-size: 36px;                        /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destaque {
+    color: var(--color-terciario);
+}
+
+.presentacion-contenido-texto {
+    font-size: 24px;                        /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
+    font-family: var(--fuente-montserrat);
+}
+
+.presentacion-enlaces {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;                    /* Change allignment of items, along main axis; i.e. vertically, since previously flex-direction was set to 'column': 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-align-items'. */
+    gap: 32px;                              /* According to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
+}
+
+.presentacion-enlaces-subtitulo {
+    /* Following specifications according to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
+    font-family: var(--fuente-krona);
+    font-size: 24px;
+    font-weight: 400;                       /* 'Regular' according to Figma asset (NEW), and according to Google Fonts page of the Font, a 'regular' font weight is '400': 'https://fonts.google.com/specimen/Krona+One'. */
+}
+
+.presentacion-enlaces-link {
+    /* Following specifications according to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
+    width: 378px;
+    text-align: center;
+    padding: 21.5px 0;                      /* Adds ONLY vertical padding, to make 'button' taller. */
+    border-radius: 8px;
+    font-size: 24px;
+    font-family: var(--fuente-montserrat);
+    font-weight: 600;                       /* According to Google Font's instructions for this specific font, in their CSS class for variable style: 'https://fonts.google.com/specimen/Montserrat' */
+    text-decoration: none;                  /* To eliminate underscore format for hyperlinks. */
+    color: var(--color-secundario);
+    border: 2px solid var(--color-terciario);            /* Reference for borders: 'https://www.w3schools.com/css/css_border.asp'. */
+    display: flex;
+    justify-content: center;                /* Using it since we're are horizontally / row alligned, not columns. */
+    gap: 10px;                              /* According to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
+}
+
+.presentacion-enlaces-link:hover {          /* Documentation for reference: 'https://www.w3schools.com/cssref/sel_hover.php'. */
+    background-color: var(--color-hover);            /* According to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
+}
+
+.footer {
+    /* Following specifications according to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
+    background-color: var(--color-terciario);
+    padding: 24px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-weight: 400;
+    font-size: 24px;
+}
