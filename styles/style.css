@@ -30,6 +30,12 @@
 }
 
 /* Default HTML tags. */
+
+/* Recommended, explicit declaration: 'https://stackoverflow.com/questions/29511983/is-the-default-font-size-of-every-browser-16px-why/29512572#29512572'. */
+html {
+    font-size: 16px;
+}
+
 body {
     background-color: var(--color-primario);
     color: var(--color-secundario);
@@ -54,7 +60,7 @@ body {
     color: var(--color-terciario);
     font-family: var(--fuente-montserrat);
     font-weight: 600;                       /* Semibold. */
-    font-size: 24px;
+    font-size: 1.5rem;
     text-decoration: none;
 }
 
@@ -65,17 +71,19 @@ body {
     /* padding: 7% 15%; */
     padding: 6% 15%;
     justify-content: space-between;         /* 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-justify-content' */
+    gap: 82px;                              /* According to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
 }
 
 .presentacion-contenido {
-    width: 615px;                           /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
+    /*width: 615px;*/                           /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
+    width: 50%;                             /* Widht as 50% of parent tag; i.e. '.presentacion', since other 50% is for image at the rigth; i.e. '.presentacion-imagen'. */
     display: flex;
     flex-direction: column;                 /* Set flow direction as columns: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flex-direction'. */
     gap: 40px;                              /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso', and as a flexbox property: 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-gap-row-gap-column-gap'. */
 }
 
 .presentacion-contenido-titulo {
-    font-size: 36px;                        /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
+    font-size: 2.25rem;                     /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
     font-family: var(--fuente-krona);
 }
 
@@ -84,7 +92,7 @@ body {
 }
 
 .presentacion-contenido-texto {
-    font-size: 24px;                        /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
+    font-size: 1.5rem;                      /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
     font-family: var(--fuente-montserrat);
 }
 
@@ -99,17 +107,18 @@ body {
 .presentacion-enlaces-subtitulo {
     /* Following specifications according to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
     font-family: var(--fuente-krona);
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 400;                       /* 'Regular' according to Figma asset (NEW), and according to Google Fonts page of the Font, a 'regular' font weight is '400': 'https://fonts.google.com/specimen/Krona+One'. */
 }
 
 .presentacion-enlaces-link {
     /* Following specifications according to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
-    width: 378px;
+    /* width: 378px; */
+    width: 50%;                             /* Widht as 50% of parent tag; i.e. '.presentacion-enlaces'. Other 50% is empty, background space.*/
     text-align: center;
     padding: 21.5px 0;                      /* Adds ONLY vertical padding, to make 'button' taller. */
     border-radius: 8px;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: var(--fuente-montserrat);
     font-weight: 600;                       /* According to Google Font's instructions for this specific font, in their CSS class for variable style: 'https://fonts.google.com/specimen/Montserrat' */
     text-decoration: none;                  /* To eliminate underscore format for hyperlinks. */
@@ -124,6 +133,10 @@ body {
     background-color: var(--color-hover);            /* According to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
 }
 
+.presentacion-imagen {
+    width: 50%;                             /* Widht as 50% of parent tag; i.e. '.presentacion', since other 50% is for text at the left; i.e. '.presentacion-contenido'. */
+}
+
 .footer {
     /* Following specifications according to Figma asset (NEW): 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
     background-color: var(--color-terciario);
@@ -132,5 +145,28 @@ body {
     text-align: center;
     font-family: var(--fuente-montserrat);
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
+}
+
+/* Responsive design: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries#targeting_media_features'. */
+/* Changes to match Figma asset (NEW), 'mobile' version: 'https://www.figma.com/design/EAQgNcBE5qOCn5qFFYZzNZ/Portafolio---Curso-3'. */
+@media (max-width: 1200px) {                /* Layout changes, when width LESS THAN 1200px, in this case. Value defined by trial and error, validating changes in developer mode. */
+    
+    .header {
+        padding: 10%;
+    }
+
+    .header-menu {
+        justify-content: center;
+    }
+
+    .presentacion {
+        flex-direction: column-reverse;     /* Set flex-direction as column (reverse) so right-image re-organize itself to the top. */
+        padding: 5%;
+    }
+
+    .presentacion-contenido {
+        width: auto;                        /* Usually 'auto' is preferred over '100%': 'https://stackoverflow.com/questions/17468733/difference-between-width-auto-and-width-100-percent/17468803#17468803', 'https://forsethingvild.medium.com/the-difference-between-width-auto-and-width-100-a58e2ac7832f'. */
+    }
+
 }
