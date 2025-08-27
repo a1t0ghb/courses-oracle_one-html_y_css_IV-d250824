@@ -89,7 +89,8 @@ body {
     }
 
     .presentacion-contenido-titulo {
-        font-size: 2.25rem;                     /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
+        /*font-size: 2.25rem;*/                     /* According to Figma asset: 'https://www.figma.com/design/D464FfN417KSWJHIUVpMnX/Portafolio---Curso'. */
+        font-size: clamp(1.8rem, calc(2vw + 1rem), 3rem);       /* Tip to adjust fon-size dynamically, according to zoom: 'https://www.tiktok.com/@thom.code/video/7540971039711382806'. */
         font-family: var(--fuente-krona);
     }
 
